@@ -8,20 +8,20 @@
 
 // import CONFIG from '../Config'
 import {
-  AUTO_SUGGESTION,
-  WELLNESS_LISTING,
+  GET_FUNCTION,
+  SET_FUNCTION,
 } from './constant'
 
 
-export const wellnessAutosuggestion = (details) => (dispatch: any) => {
+export const getFunction = (details) => (dispatch: any) => {
   dispatch({
-    type:AUTO_SUGGESTION,
+    type:GET_FUNCTION,
   })
 }
 
-export const getWellnessListing = (params) => (dispatch: any) => {
+export const setFunction = (params) => (dispatch: any) => {
   dispatch({
-    type:WELLNESS_LISTING,
+    type:SET_FUNCTION,
   })
 }
 

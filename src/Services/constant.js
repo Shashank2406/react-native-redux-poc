@@ -5,5 +5,5 @@
  *
  */
 
-export const AUTO_SUGGESTION = 'AUTO_SUGGESTION';
-export const WELLNESS_LISTING = 'WELLNESS_LISTING';
+export const GET_FUNCTION = 'GET_FUNCTION';
+export const SET_FUNCTION = 'SET_FUNCTION';

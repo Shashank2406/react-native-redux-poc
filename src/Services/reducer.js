@@ -6,26 +6,24 @@
  */
 
 import {
-    AUTO_SUGGESTION,
-    WELLNESS_LISTING,
+    GET_FUNCTION,
+    SET_FUNCTION,
   } from './constant'
     
   const initialState = {
-    suggestion:'',
-    wellnessListingReply:'',
+    getFunction:'',
+    setFunction:'',
   }
     
   export default function MyProfileReducer(state = initialState, action) {
     switch (action.type) {
-      case AUTO_SUGGESTION:
+      case GET_FUNCTION:
         return {
           ...state,
-          suggestion: action.wellnessDetailsReply
         }
-      case WELLNESS_LISTING:
+      case SET_FUNCTION:
         return {
           ...state,
-          wellnessListingReply: action.wellnessListingReply
         }
       default:
         return state

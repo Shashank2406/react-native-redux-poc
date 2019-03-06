@@ -8,14 +8,14 @@
 
 import { connect } from 'react-redux';
 import HomeComponent from '../Components/HomeComponent';
-import wellnessAutosuggestion from '../Services/action'
+import getFunction from '../Services/action'
 
 const mapStateToProps = (state) => ({
 
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  setLoader: (param) => dispatch(wellnessAutosuggestion(param))
+  getFunction: (param) => dispatch(getFunction(param))
 });
 
 const Home = connect(
