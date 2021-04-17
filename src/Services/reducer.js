@@ -1,34 +1,16 @@
-/**
- *
- * Reducer for MyProfile
- * @author Anil Kumar
- *
- */
+import { SET_DATA } from "./constant";
 
-import {
-    GET_FUNCTION,
-    SET_FUNCTION,
-  } from './constant'
-    
-  const initialState = {
-    getFunction:'',
-    setFunction:'',
-  }
-    
-  export default function MyProfileReducer(state = initialState, action) {
+const initialState = {
+    homeData: 'Knowledge Meet',
+    userData: ''
+}
+
+export default function homeReducer(state=initialState, action){
+    console.log("reducer",action)
     switch (action.type) {
-      case GET_FUNCTION:
-        return {
-          ...state,
-        }
-      case SET_FUNCTION:
-        return {
-          ...state,
-        }
-      default:
-        return state
+        case SET_DATA:
+            return {...state, homeData:action.data}
+        default:
+            return state
     }
-  }
-    
-    
-    
+}

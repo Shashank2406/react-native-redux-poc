@@ -1,38 +1,23 @@
-// import { AppRegistry } from 'react-native';
-// import App from './App';
+/**
+ * @format
+ */
 
-// AppRegistry.registerComponent('newproject', () => App);
-
-
-
-
-import {
-    AppRegistry,
-} from 'react-native';
-
-import RootReducer from './src/rootReducer';
+import {AppRegistry} from 'react-native';
+import App from './App';
+import {name as appName} from './app.json';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+import React from 'react';
+import thunk from "redux-thunk";
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from './src/rootReducer';
+import HomeComponent from "./src/Containers/Home";
 
-import { createStore, applyMiddleware } from 'redux';
-
-import Myapp from './App';
-
-import React, { Component } from 'react';
-
-
-
-export const store = createStore(
-    RootReducer,
-    undefined,
-    // the ordering of middleware is significant.
-    applyMiddleware(thunk),
-);
+export const store = createStore(rootReducer,undefined,applyMiddleware(thunk))
 
 const ReduxApp = () => (
     <Provider store={store}>
-        <Myapp />
+        <HomeComponent />
     </Provider>
-);
+)
 
-AppRegistry.registerComponent('newproject', () => ReduxApp);
+AppRegistry.registerComponent(appName, () => ReduxApp);

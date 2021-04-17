@@ -1,26 +1,17 @@
-/**
- * 
- * Container for home component  
- * @author Shashank Srivastava
- * 
- */
+import { connect } from "react-redux";
+import HomeComponent from "../Components/HomeComponent"
+import { setFunction } from "../Services/action";
 
-
-import { connect } from 'react-redux';
-import HomeComponent from '../Components/HomeComponent';
-import getFunction from '../Services/action'
 
 const mapStateToProps = (state) => ({
-
-});
+    homeValue: state.home.homeData,
+    userValue: state.home.userData
+})
 
 const mapDispatchToProps = (dispatch) => ({
-  getFunction: (param) => dispatch(getFunction(param))
-});
+    setFunction: (param) => dispatch(setFunction(param))
+})
 
-const Home = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeComponent);
+const Home = connect(mapStateToProps, mapDispatchToProps)(HomeComponent)
 
 export default Home;
